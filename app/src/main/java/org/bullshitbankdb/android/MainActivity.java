@@ -121,7 +121,7 @@ public class MainActivity extends ActionBarActivity {
                    }else{
                        ParseObject bullshITBankDB = new ParseObject("BullshITBankDB");
                        bullshITBankDB.put("phone",NewNumber);
-                       bullshITBankDB.put("guid",GUID);
+                       bullshITBankDB.put("submitterguid",GUID);
                        bullshITBankDB.saveInBackground(new SaveCallback() {
                            @Override
                            public void done(ParseException e) {
