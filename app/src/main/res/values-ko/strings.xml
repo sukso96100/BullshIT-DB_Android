@@ -8,4 +8,7 @@
     <string name="title_activity_detil">자세한 정보</string>
     <string name="comments">댓글</string>
     <string name="submitter">[등룩자]</string>
+    <string name="duplicate">이미 있는 번호입니다.</string>
+    <string name="saved">저장되었습니다!</string>
+    <string name="too_short">6자 보다 길어야 합니다.</string>
 </resources>

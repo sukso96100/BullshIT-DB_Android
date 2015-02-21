@@ -10,4 +10,7 @@
     <string name="input_comment">Add Comment</string>
     <string name="comments">Comments</string>
     <string name="submitter">[Submitter]</string>
+    <string name="saved">Saved!</string>
+    <string name="duplicate">It\'s already existing number.</string>
+    <string name="too_short">It must be longer then 6 characters.</string>
 </resources>

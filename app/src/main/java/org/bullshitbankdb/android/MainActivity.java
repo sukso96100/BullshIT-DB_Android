@@ -16,11 +16,13 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
         GUID = AC.GUID;
 
         final EditText SearchInput = (EditText)findViewById(R.id.search);
-        EditText AddNewInput = (EditText)findViewById(R.id.addnew);
+        final EditText AddNewInput = (EditText)findViewById(R.id.addnew);
         listview = (ListView)findViewById(R.id.listView);
 
         SearchInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -54,6 +56,17 @@ public class MainActivity extends ActionBarActivity {
                 if(actionId == EditorInfo.IME_ACTION_DONE){
                     Log.d(TAG,"Searching BullshIT...");
                     searchBullshITBank(SearchInput.getText().toString());
+                }
+                return false;
+            }
+        });
+
+        AddNewInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_DONE){
+                    Log.d(TAG,"Adding New BullshIT...");
+                    addBullshITBank(AddNewInput.getText().toString());
                 }
                 return false;
             }
@@ -88,7 +101,38 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-
+    public void addBullshITBank(final String NewNumber){
+        if(NewNumber.length()<6){
+            Toast.makeText(mContext,
+                    getResources().getString(R.string.too_short),
+                    Toast.LENGTH_LONG).show();
+        }else{
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("BullshITBankDB");
+            query.whereStartsWith("phone", NewNumber);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> parseObjects, ParseException e) {
+                   if(parseObjects.size()>0){
+                       Toast.makeText(mContext,
+                               getResources().getString(R.string.duplicate),
+                               Toast.LENGTH_LONG).show();
+                   }else{
+                       ParseObject bullshITBankDB = new ParseObject("BullshITBankDB");
+                       bullshITBankDB.put("phone",NewNumber);
+                       bullshITBankDB.put("guid",GUID);
+                       bullshITBankDB.saveInBackground(new SaveCallback() {
+                           @Override
+                           public void done(ParseException e) {
+                               Toast.makeText(mContext,
+                                       getResources().getString(R.string.saved),
+                                       Toast.LENGTH_LONG).show();
+                           }
+                       });
+                   }
+                }
+            });
+        }
+    }
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.
