@@ -1,6 +1,8 @@
 package org.bullshitbankdb.android;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -12,8 +14,7 @@ import android.view.ViewGroup;
 import org.bullshitbankdb.android.compat.PreferenceFragment;
 
 
-public class AboutFragment extends PreferenceFragment
-implements Preference.OnPreferenceClickListener{
+public class AboutFragment extends PreferenceFragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,14 +22,23 @@ implements Preference.OnPreferenceClickListener{
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.pref_general);
 
-
-    }
-
-    @Override
-    public boolean onPreferenceClick(Preference preference) {
-        if(preference.getKey()=="src"){
-
+        //Get app version name from Manifest
+        String app_ver = null;
+        try {
+            app_ver = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
         }
-        return false;
+
+        findPreference("ver").setSummary(app_ver);
+        findPreference("src").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://github.com/sukso96100/bullshitbankdb-android"));
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 }
