@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BullshITBankDB</string>
+    <string name="action_settings">설정</string>
+    <string name="input_addnew">새로 추가하기</string>
+    <string name="input_search">찾기</string>
+</resources>

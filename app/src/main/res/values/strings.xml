@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">BullshITBankDB</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world" translatable="false">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="input_addnew">Add New One</string>
+    <string name="input_search">Search One</string>
 </resources>
