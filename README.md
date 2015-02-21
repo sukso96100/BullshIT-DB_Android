@@ -1,7 +1,7 @@
 # bullshitbankdb-android
-Android app source for BullshITBankDB
-Let's make (BullshITBank==null || ITBank==null) true
-다같이 힘을 모아, (BullshITBank==null || ITBank==null) 이 true 가 되도록 해 봅시다.
+- Android app source for BullshITBankDB
+- Let's make (BullshITBank==null || ITBank==null) true
+- 다같이 힘을 모아, (BullshITBank==null || ITBank==null) 이 true 가 되도록 해 봅시다.
 
 ## License
 MIT License
