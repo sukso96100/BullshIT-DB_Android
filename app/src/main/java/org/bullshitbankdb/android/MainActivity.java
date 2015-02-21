@@ -49,6 +49,8 @@ public class MainActivity extends ActionBarActivity {
         final EditText SearchInput = (EditText)findViewById(R.id.search);
         final EditText AddNewInput = (EditText)findViewById(R.id.addnew);
         listview = (ListView)findViewById(R.id.listView);
+        TextView EmptyView = (TextView)findViewById(R.id.empty);
+        listview.setEmptyView(EmptyView);
 
         SearchInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override

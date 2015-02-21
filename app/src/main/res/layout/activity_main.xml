@@ -42,4 +42,9 @@
         android:layout_height="match_parent"
         android:padding="16dp"
         android:id="@+id/listView"></ListView>
+    <TextView android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/no_results"
+        android:padding="16dp"/>
 </LinearLayout>

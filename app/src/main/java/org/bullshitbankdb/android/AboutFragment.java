@@ -40,5 +40,14 @@ public class AboutFragment extends PreferenceFragment{
                 return false;
             }
         });
+        findPreference("web").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://sukso96100.github.io/bullsh-itbank-db"));
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 }

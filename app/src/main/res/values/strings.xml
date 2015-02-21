@@ -30,6 +30,7 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="web">Visit BullshITBankDB Website</string>
-    <string name="web_sub" translatable="false">https://youngbin.tk/bullsh-itbank-dn</string>
+    <string name="web_sub" translatable="false">https://youngbin.tk/bullsh-itbank-db</string>
     <string name="returns_true">Warning! isBullshITBank() returns true!</string>
+    <string name="no_results">Search or add phone number. Search results will be displayed here.</string>
 </resources>
