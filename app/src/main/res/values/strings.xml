@@ -13,4 +13,22 @@
     <string name="saved">Saved!</string>
     <string name="duplicate">It\'s already existing number.</string>
     <string name="too_short">It must be longer then 6 characters.</string>
+    <string name="title_activity_about">About</string>
+    <string name="version">Version</string>
+    <string name="call_alert">Notify Phone Calls from IT Bank</string>
+    <string name="call_alert_sub">Notify When the Phone Call that received is from IT Bank</string>
+    <string name="get_src">Get Sourcecode</string>
+    <string name="get_src_sub">Get Full Sourcecode at GitHub</string>
+
+    <!--  Strings for possible PreferenceActivity Back/Next buttons -->
+    <string name="back_button_label" translatable="false">Back</string>
+    <string name="next_button_label" translatable="false">Next</string>
+
+    <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
+    <string name="skip_button_label" translatable="false">Skip</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="web">Visit BullshITBankDB Website</string>
+    <string name="web_sub" translatable="false">https://youngbin.tk/bullsh-itbank-dn</string>
 </resources>

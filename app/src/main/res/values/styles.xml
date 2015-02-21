@@ -10,7 +10,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#ffbc0000</item>
         <item name="colorPrimaryDark">#ff840000</item>
-        <item name="colorAccent">#fff</item>
+        <item name="colorAccent">#ffff1f00</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 

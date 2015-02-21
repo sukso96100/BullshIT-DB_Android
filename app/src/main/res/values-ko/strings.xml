@@ -11,4 +11,11 @@
     <string name="duplicate">이미 있는 번호입니다.</string>
     <string name="saved">저장되었습니다!</string>
     <string name="too_short">6자 보다 길어야 합니다.</string>
+    <string name="title_activity_about">앱 정보</string>
+    <string name="version">버전</string>
+    <string name="call_alert">IT Bank 전화 알림</string>
+    <string name="call_alert_sub">수신한 전화가 IT Bank 에서 걸은 전화인 경우 알림</string>
+    <string name="get_src">소스코드 얻기</string>
+    <string name="get_src_sub">GitHub 에서 소스코드 얻기</string>
+    <string name="web">BullshITBankDB 웹사이트 방문하기</string>
 </resources>

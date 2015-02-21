@@ -24,8 +24,22 @@
         <activity
             android:name=".DetilActivity"
             android:label="@string/title_activity_detil"
-            android:theme="@style/Theme.BullshITBankDB.NoActionBar">
+            android:theme="@style/Theme.BullshITBankDB.NoActionBar" >
         </activity>
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.bullshitbankdb.android.MainActivity" />
+        </activity>
+
+        <receiver
+            android:name=".PhoneCallReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
     </application>
 
 </manifest>
