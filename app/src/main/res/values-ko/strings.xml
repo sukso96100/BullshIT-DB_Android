@@ -4,4 +4,8 @@
     <string name="action_settings">설정</string>
     <string name="input_addnew">새로 추가하기</string>
     <string name="input_search">찾기</string>
+    <string name="input_comment">댓글 추가하기</string>
+    <string name="title_activity_detil">자세한 정보</string>
+    <string name="comments">댓글</string>
+    <string name="submitter">[등룩자]</string>
 </resources>

@@ -6,4 +6,8 @@
 
     <string name="input_addnew">Add New One</string>
     <string name="input_search">Search One</string>
+    <string name="title_activity_detil">Detils</string>
+    <string name="input_comment">Add Comment</string>
+    <string name="comments">Comments</string>
+    <string name="submitter">[Submitter]</string>
 </resources>

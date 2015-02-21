@@ -1,6 +1,7 @@
 package org.bullshitbankdb.android;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,7 +9,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -29,6 +32,7 @@ public class MainActivity extends ActionBarActivity {
     ListView listview;
     ArrayAdapter<String> ResultsAdapter;
     Context mContext = MainActivity.this;
+    String GUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ApplicationClass AC = (ApplicationClass)getApplicationContext();
+        GUID = AC.GUID;
 
         final EditText SearchInput = (EditText)findViewById(R.id.search);
         EditText AddNewInput = (EditText)findViewById(R.id.addnew);
@@ -61,13 +68,21 @@ public class MainActivity extends ActionBarActivity {
             public void done(List<ParseObject> parseObjects, ParseException e) {
                 Log.d(TAG,"Done Searching!");
                 Log.d(TAG,parseObjects.toString());
-                ArrayList<String> Array = new ArrayList<String>();
+                final ArrayList<String> Array = new ArrayList<String>();
                 for(int i=0; i<parseObjects.size(); i++){
                     String Item = parseObjects.get(i).getString("phone");
                     Log.d(TAG, Item);
                     Array.add(Item);
                     ResultsAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, Array);
                     listview.setAdapter(ResultsAdapter);
+                    listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent DetailIntent = new Intent(mContext, DetilActivity.class);
+                            DetailIntent.putExtra("phone",Array.get(position));
+                            startActivity(DetailIntent);
+                        }
+                    });
                 }
             }
         });
