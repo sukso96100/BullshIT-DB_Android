@@ -25,6 +25,5 @@ public class ApplicationClass extends Application {
         Parse.initialize(this, "TK6eb71TLg0APbyMsHiSaGEbW3jfG7ItMr6GFaLE", "hhKVpCMilgjCtrWqtwc5nno7hoA2W0AMrpGzLY01");
 
         GuidTool GT = new GuidTool(ApplicationClass.this);
-        GT.genGUID();
     }
 }
