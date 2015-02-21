@@ -15,6 +15,7 @@ import org.bullshitbankdb.android.compat.PreferenceFragment;
 
 
 public class AboutFragment extends PreferenceFragment{
+    GuidTool GT;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,17 @@ public class AboutFragment extends PreferenceFragment{
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("https://sukso96100.github.io/bullsh-itbank-db"));
                 startActivity(intent);
+                return false;
+            }
+        });
+        GT = new GuidTool(getActivity());
+        Preference GUIDpref = findPreference("guid");
+        GUIDpref.setSummary(GT.getGUID());
+        GUIDpref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                GT.genGUID();
+                preference.setSummary(GT.getGUID());
                 return false;
             }
         });

@@ -61,8 +61,8 @@ public class DetilActivity extends ActionBarActivity {
         AddComment = (EditText)findViewById(R.id.addcomment);
         BullshITBtnBg = (LinearLayout)findViewById(R.id.bullshitbg);
 
-        ApplicationClass AC = (ApplicationClass)getApplicationContext();
-        GUID = AC.GUID;
+        GuidTool GT = new GuidTool(mContext);
+        GUID = GT.getGUID();
 
         loadDetail();
 
@@ -104,10 +104,24 @@ public class DetilActivity extends ActionBarActivity {
                 }else{
                     BullshITBtnBg.setBackgroundColor(Color.parseColor("#ffffb600"));
                 }
-                BullshITCount.setText(String.valueOf(BullshITCountList.size()));
-                List<String> CommentsList = parseObject.getList("comments");
-                CommentsAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1,CommentsList);
-                Comments.setAdapter(CommentsAdapter);
+                try {
+                    BullshITCount.setText(String.valueOf(BullshITCountList.size()));
+                }catch (Exception ee){
+                    BullshITCount.setText(String.valueOf(0));
+                }
+
+                Log.d(TAG,"Loading Comments");
+                try{
+                    List<String> CommentsList = parseObject.getList("comments");
+                    if(CommentsList==null){
+                        CommentsList = new ArrayList<String>();
+                    }
+                    CommentsAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1,CommentsList);
+                    Comments.setAdapter(CommentsAdapter);
+                }catch (Exception er){
+                    Log.d(TAG,"Loading Comments Failed");
+                    er.printStackTrace();
+                }
                 getSupportActionBar().setSubtitle(
                         getResources().getString(R.string.submitter)
                                 +parseObject.getString("submitterguid"));
@@ -152,6 +166,9 @@ public class DetilActivity extends ActionBarActivity {
                 Log.d("TAG","Done Loading Detail!");
                 String NewComment = AddComment.getText().toString();
                 List<String> CommentsList = parseObject.getList("comments");
+                if(CommentsList==null){
+                    CommentsList = new ArrayList<String>();
+                }
                 CommentsList.add(NewComment+"["+GUID+"]");
                 parseObject.put("comments",CommentsList);
                 parseObject.saveInBackground();

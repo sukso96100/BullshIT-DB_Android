@@ -20,4 +20,5 @@
     <string name="web">BullshITBankDB 웹사이트 방문하기</string>
     <string name="returns_true">경고! isBullshITBank() 가 true 를 반환합니다!</string>
     <string name="no_results">검색하거나 번호를 추가하세요. 여기에 검색결과가 표시됩니다.</string>
+    <string name="myguid">내 GUID 값(터치하여 다시생성)</string>
 </resources>

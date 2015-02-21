@@ -43,8 +43,8 @@ public class MainActivity extends ActionBarActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ApplicationClass AC = (ApplicationClass)getApplicationContext();
-        GUID = AC.GUID;
+        GuidTool GT = new GuidTool(mContext);
+        GUID = GT.getGUID();
 
         final EditText SearchInput = (EditText)findViewById(R.id.search);
         final EditText AddNewInput = (EditText)findViewById(R.id.addnew);
