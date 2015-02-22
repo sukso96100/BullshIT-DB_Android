@@ -15,4 +15,4 @@ MIT License
 - PreferenceFragment Backports
 
 ## Website
-http://sukso96100.github.io/bullsh-itbank-db
+http://sukso96100.github.io/bullsh-it-db
