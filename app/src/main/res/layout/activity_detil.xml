@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="isBullshITBank()==true"
+                android:text="isBullshIT()==true"
                 android:foreground="?selectableItemBackground"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@android:color/white"/>
@@ -62,7 +62,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="440dp"
-        android:padding="16dp"
+        android:padding="8dp"
         android:id="@+id/comments"
         android:layout_weight="1"></ListView>
     <EditText
