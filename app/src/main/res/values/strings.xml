@@ -36,7 +36,7 @@
     <string name="myguid">My GUID Value(Touch to Regrnerate)</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
-    <string name="title_activity_intro" translatable="false">Intro</string>
+    <string name="title_activity_intro">Intro</string>
     <string name="intro">Let\'s make BullshITs of IT World null. Have any BullshIT\'s number? Submit it!</string>
     <string name="addnew_confirm">Check once more before submitting</string>
     <string name="short_desc">Short Description Here</string>
