@@ -36,7 +36,7 @@ public class AboutFragment extends PreferenceFragment{
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://github.com/sukso96100/bullshitbankdb-android"));
+                intent.setData(Uri.parse("https://github.com/sukso96100/BullshIT-DB_Android"));
                 startActivity(intent);
                 return false;
             }
@@ -45,7 +45,7 @@ public class AboutFragment extends PreferenceFragment{
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://sukso96100.github.io/bullsh-itbank-db"));
+                intent.setData(Uri.parse("https://sukso96100.github.io/bullsh-it-db"));
                 startActivity(intent);
                 return false;
             }

@@ -1,12 +1,19 @@
 package org.bullshitbankdb.android;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +50,15 @@ public class MainActivity extends ActionBarActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        SharedPreferences Pref = getSharedPreferences("pref",MODE_PRIVATE);
+        boolean firstrun = Pref.getBoolean("firstrun",true);
+        if(firstrun){
+            startActivity(new Intent(mContext, Intro.class));
+            SharedPreferences.Editor Edit = Pref.edit();
+            Edit.putBoolean("firstrun",false);
+            Edit.commit();
+        }
+        
         GuidTool GT = new GuidTool(mContext);
         GUID = GT.getGUID();
 
@@ -109,30 +125,24 @@ public class MainActivity extends ActionBarActivity {
                     getResources().getString(R.string.too_short),
                     Toast.LENGTH_LONG).show();
         }else{
+
             ParseQuery<ParseObject> query = ParseQuery.getQuery("BullshITBankDB");
             query.whereStartsWith("phone", NewNumber);
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
                 public void done(List<ParseObject> parseObjects, ParseException e) {
-                   if(parseObjects.size()>0){
-                       Toast.makeText(mContext,
-                               getResources().getString(R.string.duplicate),
-                               Toast.LENGTH_LONG).show();
-                   }else{
-                       ParseObject bullshITBankDB = new ParseObject("BullshITBankDB");
-                       bullshITBankDB.put("phone",NewNumber);
-                       bullshITBankDB.put("submitterguid",GUID);
-                       bullshITBankDB.saveInBackground(new SaveCallback() {
-                           @Override
-                           public void done(ParseException e) {
-                               Toast.makeText(mContext,
-                                       getResources().getString(R.string.saved),
-                                       Toast.LENGTH_LONG).show();
-                           }
-                       });
-                   }
+                    if (parseObjects.size() > 0) {
+                        Toast.makeText(mContext,
+                                getResources().getString(R.string.duplicate),
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        DialogFragment ConfirmDialog = AddNewConfirmDialog.newInstance(NewNumber,GUID);
+                        ConfirmDialog.show(fragmentManager,"confirmdialog");
+                    }
                 }
             });
+            
         }
     }
     @Override
@@ -157,4 +167,5 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

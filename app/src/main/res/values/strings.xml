@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BullshITVenkDB</string>
+    <string name="app_name">BullshIT-DB</string>
 
     <string name="hello_world" translatable="false">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -15,23 +15,30 @@
     <string name="too_short">It must be longer then 6 characters.</string>
     <string name="title_activity_about">About</string>
     <string name="version">Version</string>
-    <string name="call_alert">Notify Phone Calls from IT Bank</string>
-    <string name="call_alert_sub">Notify When the Phone Call that received is from IT B@nk</string>
+    <string name="call_alert">Phone Call Notification</string>
+    <string name="call_alert_sub">Notify if the Caller\'s Number exists in BullshIT-DB\'s DB</string>
     <string name="get_src">Get Sourcecode</string>
     <string name="get_src_sub">Get Full Sourcecode at GitHub</string>
 
     <!--  Strings for possible PreferenceActivity Back/Next buttons -->
-    <string name="back_button_label" translatable="false">Back</string>
-    <string name="next_button_label" translatable="false">Next</string>
+    <string name="back_button_label">Back</string>
+    <string name="next_button_label">Next</string>
 
     <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
-    <string name="skip_button_label" translatable="false">Skip</string>
+    <string name="skip_button_label">Skip</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="web">Visit BullshITVenkDB Website</string>
-    <string name="web_sub" translatable="false">https://youngbin.tk/bullsh-itbank-db</string>
-    <string name="returns_true">Warning! isBullshITBank() returns true!</string>
+    <string name="web">Visit BullshIT-DB Website</string>
+    <string name="web_sub" translatable="false">https://youngbin.tk/bullsh-it-db</string>
+    <string name="returns_true">Warning! isBullshIT() returns true!</string>
     <string name="no_results">Search or add phone number. Search results will be displayed here.</string>
     <string name="myguid">My GUID Value(Touch to Regrnerate)</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_intro" translatable="false">Intro</string>
+    <string name="intro">Let\'s make BullshITs of IT World null. Have any BullshIT\'s number? Submit it!</string>
+    <string name="addnew_confirm">Check once more before submitting</string>
+    <string name="short_desc">Short Description Here</string>
+    <string name="empty_desc">You must type description nor it won\'t be submitted</string>
 </resources>
