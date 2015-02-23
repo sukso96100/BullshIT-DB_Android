@@ -41,4 +41,6 @@
     <string name="addnew_confirm">Check once more before submitting</string>
     <string name="short_desc">Short Description Here</string>
     <string name="empty_desc">You must type description nor it won\'t be submitted</string>
+    <string name="sms_alert">SMS Notification</string>
+    <string name="sms_alert_sub">Notify if the Sender\'s Number exists in BullshIT-DB\'s DB</string>
 </resources>

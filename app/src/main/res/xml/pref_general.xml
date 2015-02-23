@@ -11,6 +11,12 @@
         android:summary="@string/call_alert_sub"
         android:defaultValue="true" />
 
+    <CheckBoxPreference
+        android:key="sms_alert"
+        android:title="@string/sms_alert"
+        android:summary="@string/sms_alert_sub"
+        android:defaultValue="true" />
+
     <Preference
         android:key="guid"
         android:title="@string/myguid"

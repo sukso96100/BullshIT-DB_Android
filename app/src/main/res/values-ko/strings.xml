@@ -31,4 +31,6 @@
     <string name="short_desc">짧은 설명 입력</string>
     <string name="empty_desc">설명을 입력하지 않으시면, 등록되지 않습니다.</string>
     <string name="title_activity_intro">소개</string>
+    <string name="sms_alert">SMS 알림</string>
+    <string name="sms_alert_sub">SMS 메시지 발신자가 BullshIT-DB 의 DB 에 있는 번호인 경우 알림</string>
 </resources>
