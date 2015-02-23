@@ -8,8 +8,8 @@ android {
         applicationId "org.bullshitbankdb.android"
         minSdkVersion 9
         targetSdkVersion 21
-        versionCode 6
-        versionName "0.1.5-beta"
+        versionCode 7
+        versionName "0.2.0-beta"
     }
     buildTypes {
         release {

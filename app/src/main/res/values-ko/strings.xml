@@ -24,7 +24,7 @@
     <string name="confirm">확인</string>
     <string name="cancel">취소</string>
     <string name="addnew_confirm">등록하기 앞서, 다시한번 확인하세요</string>
-    <string name="intro">다같이 힘을 모아 IT 계의 BullshIT 이 null 이 되도록 해 봅시다. BullshIT 의 전화번호가 있나요? 등룩하세요!</string>
+    <string name="intro">다같이 힘을 모아 IT 계의 BullshIT 이 null 이 되도록 해 봅시다. BullshIT 의 전화번호가 있나요? 등록하세요!</string>
     <string name="next_button_label">다음</string>
     <string name="skip_button_label">건너뛰기</string>
     <string name="back_button_label">뒤로</string>
