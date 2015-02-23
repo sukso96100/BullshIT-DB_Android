@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BullshITBankDB.iml" filepath="$PROJECT_DIR$/BullshITBankDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BullshIT-DB_Android.iml" filepath="$PROJECT_DIR$/BullshIT-DB_Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

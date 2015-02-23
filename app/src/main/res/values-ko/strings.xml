@@ -18,7 +18,7 @@
     <string name="get_src">소스코드 얻기</string>
     <string name="get_src_sub">GitHub 에서 소스코드 얻기</string>
     <string name="web">BullshIT-DB 웹사이트 방문하기</string>
-    <string name="returns_true">경고! isBullshIT() 가 true 를 반환합니다!</string>
+    <string name="returns_true">경고! isBullshIT()이 true를 반환합니다!</string>
     <string name="no_results">검색하거나 번호를 추가하세요. 여기에 검색결과가 표시됩니다.</string>
     <string name="myguid">내 GUID 값(터치하여 다시생성)</string>
     <string name="confirm">확인</string>
